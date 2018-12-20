@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
-    <script src="dist/js/jquery-1.12.4.js"></script>
-    <script src="dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
     <style>
         spam{
             font-size: 48px;
@@ -73,9 +73,9 @@
     <div class="col-md-8 aa">
         <spam>红十字国际委员会与国际隐私组织调查发现，数据痕迹可能危及人道援助受益人</spam>
         <br>
-        <button type="button" class="btn btn-info"><a href="index.html" style="color: #fff;">首页</a></button>   |  2018-12-07
+        <button type="button" class="btn btn-info"><a th:href="@{/index}" style="color: #fff;">首页</a></button>   |  2018-12-07
         <br>
-        <br><img src="img/blogtrepreneur.jpg" alt="" width="756" height="420">
+        <br><img src="/static/img/blogtrepreneur.jpg" alt="" width="756" height="420">
         <br>
         <h5>© blogtrepreneur.com/tech</h5>
         <br>
@@ -96,7 +96,7 @@
             该报告详细说明了人道组织在工作中使用电信、即时通讯软件或社交媒体时会收集或生成哪些元数据。虽然此报告并
             未主张保护隐私或反对监控，但它阐述了因监控所产生的风险可能会妨碍或损害人道行动的中立、公正和独立性。
         </h4>
-        <img src="img/$1K%60BTI(W$X095~QL$0%5D3WD.png" alt="">
+        <img src="/static/img/$1K%60BTI(W$X095~QL$0%5D3WD.png" alt="">
         <br><br>
         <h4>为解决这一问题，该报告建议要系统地了解什么人能够获得什么信息，从而预见到用户如何被画像或如何遭到歧视。
             它还鼓励人道组织提高其工作人员、志愿者以及（最重要的）服务对象对数字化常识的了解。
@@ -135,19 +135,19 @@
 
             <h5>最新内容</h5>
             <div class="right-neirong">
-                <img src="img/ioyodhtl.bmp" alt="">
+                <img src="/static/img/ioyodhtl.bmp" alt="">
                 <a href="">红十字国际委员会与国际隐私组织调查发现，
                     数据痕迹可能危及人道援助受益人
                 </a>
             </div>
             <div class="right-neirong">
-                <img src="img/ioyodhtl.bmp" alt="">
+                <img src="/static/img/ioyodhtl.bmp" alt="">
                 <a href="">红十字国际委员会与国际隐私组织调查发现，
                     数据痕迹可能危及人道援助受益人
                 </a>
             </div>
             <div class="right-neirong">
-                <img src="img/ioyodhtl.bmp" alt="">
+                <img src="/static/img/ioyodhtl.bmp" alt="">
                 <a href="">红十字国际委员会与国际隐私组织调查发现，
                     数据痕迹可能危及人道援助受益人
                 </a>
