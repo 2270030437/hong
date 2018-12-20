@@ -2,16 +2,16 @@ package com.example.hong.pojo;
 
 import java.io.Serializable;
 
-public class jx implements Serializable {
-     private Integer wid;
+public class juan implements Serializable {
+    private Integer wid;
     private String wname;
     private String tem;
     private String money;
 
-    public jx() {
+    public juan() {
     }
 
-    public jx(Integer wid, String wname, String tem, String money) {
+    public juan(Integer wid, String wname, String tem, String money) {
         this.wid = wid;
         this.wname = wname;
         this.tem = tem;

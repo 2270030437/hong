@@ -342,7 +342,7 @@
 
 
                             <div class="col-xs-6 col-md-5 bg-white-3">
-                                <form action="" method="POST" class="validate" novalidate="novalidate">
+                                <form th:action="@{/addDonate}" method="POST" class="validate" novalidate="novalidate">
                                     <input type="hidden" name="operation_code" value="421702">
                                     <input type="hidden" name="amount" value="140">
                                     <input type="hidden" name="donor_title" value="">
@@ -368,21 +368,21 @@
 
 
                                         <div class="js_amount vspace-top-small center-content">
-                                            <input id="amount_0" name="amount_radio" type="radio" value="￥100"/><label
+                                            <input id="amount_0" name="money" type="radio" value="￥100"/><label
                                                 class="amount bordered box" for="amount_0"><span
                                                 class="prefix"></span><span class="amount-label"></span><span
                                                 class="suffix"></span></label>
-                                            <input id="amount_1" name="amount_radio" type="radio" value="￥200"
+                                            <input id="amount_1" name="money" type="radio" value="￥200"
                                                    checked="checked"/><label class="amount bordered box" for="amount_1"><span
                                                 class="prefix"></span><span class="amount-label"></span><span
                                                 class="suffix"></span></label>
-                                            <input id="amount_2" name="amount_radio" type="radio" value="￥300"/><label
+                                            <input id="amount_2" name="money" type="radio" value="￥300"/><label
                                                 class="amount bordered box" for="amount_2"><span
                                                 class="prefix"></span><span class="amount-label"></span><span
                                                 class="suffix"></span></label>
                                             <label class="amount_custom" data-currency-prefix="€"
                                                    data-currency-suffix="€">
-                                                <input class="bordered box" name="amount_input" type="number"
+                                                <input class="bordered box" name="money" type="number"
                                                        placeholder="其他" value="" maxlength="7"/>
                                             </label>
                                         </div>
@@ -483,8 +483,8 @@
                                             <div class="col-xs-12 col-sm-9">
                                                 <div class="row">
                                                     <label class="col-xs-12 col-sm-6 vspace-top-small">
-                                                        姓名 <input type="text" name="donor_first_name" id="input"
-                                                                  value="" placeholder="马榕鲜"/>
+                                                        姓名 <input type="text" name="wname" id="wname"
+                                                                   placeholder="马榕鲜"/>
                                                     </label>
                                                     <!--<label class="col-xs-12 col-sm-6 vspace-top-small">-->
                                                     <!--姓                        <input type="text" name="donor_last_name" value="" placeholder="Dunant"/>-->
@@ -755,7 +755,7 @@
                                                                value=""/>
                                                     </div>
                                                     <div class="col-xs-12 col-sm-9">
-                                                        <input type="tel" name="donor_phone_number" value=""
+                                                        <input type="tel" name="tem" value=""
                                                                placeholder="15934564608"/>
                                                     </div>
                                                 </div>
@@ -775,16 +775,13 @@
 
                                             <li class="vspace-top-small">
                                                 <input type="checkbox" name="donor_is_newsletter" value="1">
-                                                <label >
-                                                    是的，我希望了解关于红十字国际委员会所开展工作的最新信息 </label>
+                                                    是的，我希望了解关于红十字国际委员会所开展工作的最新信息
                                             </li>
 
 
                                             <li class="vspace-top-small">
-                                                <input type="checkbox" name="donor_is_gift_program" value="1"
-                                                      >
-                                                <label >
-                                                    我的公司会进行等额捐款 </label>
+                                                <input type="checkbox" name="donor_is_gift_program" value="1">
+                                                    我的公司会进行等额捐款
                                             </li>
                                         </ul>
 
@@ -819,9 +816,11 @@
                                     <div class="center-content">
                                         <input type="hidden" name="formSubmit" value="submit">
                                         <button id="btn" name="submit" class="btn btn--red i-arrow-right-after"
-                                                value="submit">捐款
+                                                value="submit" onclick="isok();">捐款
                                         </button>
                                     </div>
+                                    <script>
+                                    </script>
 
                                 </form>
                             </div>
