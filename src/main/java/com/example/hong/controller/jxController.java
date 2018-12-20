@@ -5,9 +5,7 @@ import com.example.hong.pojo.juan;
 import com.example.hong.service.jxService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -22,6 +20,12 @@ public class jxController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping("/lj")
+    public String lj() {
+        return "lj";
+    }
+
     @RequestMapping("/text")
     public String text() {
         return "text";
@@ -62,6 +66,24 @@ public class jxController {
             return "getjxList";
         }
         return "forward:/DZ";
+    }
+    @RequestMapping("/deletejx/{wid}")
+    public String deletejx(@PathVariable Integer wid){
+        int result=jxService.deletejx(wid);
+        return "forward:/getjxList";
+    }
 
+
+
+
+
+
+
+
+    @RequestMapping(value = "/getjx",method = RequestMethod.GET)
+    @ResponseBody
+    public Object getjx(){
+        List<juan> list = jxService.getjxList();
+        return list;
     }
 }

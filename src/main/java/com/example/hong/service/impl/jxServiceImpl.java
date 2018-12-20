@@ -29,4 +29,9 @@ public class jxServiceImpl implements jxService {
     public admin login(String adminName, String adminPwd) {
         return jxDao.login(adminName,adminPwd);
     }
+
+    @Override
+    public int deletejx(Integer wid) {
+        return jxDao.deletejx(wid);
+    }
 }

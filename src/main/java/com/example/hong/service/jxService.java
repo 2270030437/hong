@@ -11,4 +11,6 @@ public interface jxService {
     List<juan> getjxList();
 
     admin login(String adminName, String adminPwd);
+
+    int deletejx(Integer wid);
 }
