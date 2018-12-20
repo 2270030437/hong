@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捐款</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="dist/js/jquery-1.12.4.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+    <style>
+        /*左半部分内容*/
+        .center-left h2{
+            margin-left: 200px;
+            margin-top: 60px;
+        }
+        .which_group {
+            list-style:none;
+            margin:0;
+            padding:0;
+            width:100%;
+            font-size:11px;
+            color:#595959;
+        }
+        .which_group li {
+            float:left;
+            list-style:none;
+            padding:7px;
+            cursor:pointer;
+            box-Shadow:1px 2px 3px #D9D9D9;
+        }
+        .which_group li:first-child {
+            border-top-left-radius:3px;
+            border-bottom-left-radius:3px;
+        }
+        .which_group li:last-child {
+            border-top-right-radius:3px;
+            border-bottom-right-radius:3px;
+        }
+        .center-left ul li{
+            margin-top: 20px;
+            padding-top:15px;
+            padding-left: 25px;
+            width:150px;
+            height: 60px;
+            font-size: 19px;
+            font-family:Fantasy;
+
+        }
+        .center-left ul li:nth-of-type(1){
+            margin-left: 140px;
+        }
+
+        .input{
+            margin-top: 30px;
+            margin-left:60px;
+
+        }
+        #route{
+            /*width: 50px;*/
+            /*height: 30px;*/
+        }
+        .group{
+            /*list-style:none;*/
+            /*margin:0;*/
+            /*padding:0;*/
+            /*font-size:11px;*/
+            color:#595959;
+
+        }
+        .group li {
+              /*width: 50px;*/
+              /*height: 30px;*/
+              /*list-style:none;*/
+              /*padding:7px;*/
+              cursor:pointer;
+              box-Shadow:1px 2px 3px #D9D9D9;
+          }
+        .ul li{
+            display: inline-block;
+        }
+        .ul li:nth-of-type(1){
+            margin-left: 20px;
+        }
+
+        /*.group li:first-child {*/
+            /*border-top-left-radius:3px;*/
+            /*border-bottom-left-radius:3px;*/
+        /*}*/
+        /*.group li:last-child {*/
+            /*border-top-right-radius:3px;*/
+            /*border-bottom-right-radius:3px;*/
+        /*}*/
+        .input input:nth-of-type(1){
+            width:88px;
+            height: 45px;
+            font-size: 16px;
+        }
+        .input input:nth-of-type(2){
+            width:88px;
+            height: 45px;
+            font-size: 16px;
+            margin-left: 30px;
+        }
+        .input input:nth-of-type(3){
+            width:88px;
+            height: 45px;
+            font-size: 16px;
+            margin-left: 30px;
+        }
+        .input input:nth-of-type(4){
+            display: inline-block;
+            width:100px;
+            height: 45px;
+            margin-left: 30px;
+        }
+        .money{
+            font-size: 18px;
+           margin-top: 30px;
+            margin-left: 55px;
+        }
+        .money select{
+            width: 475px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding-left: 20px;
+
+        }
+        .sigmacontent{
+            margin: 50px;
+            text-align: center;
+
+        }
+        .sigmaline:before{
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #b0b0b0;/*颜色需与主题大背景色一致*/
+            position: relative;
+            top: 10px;/*调节线高*/
+            left: 0;
+        }
+        .sigmatext{
+            display: inline-block;
+            background: #fff;
+            padding: 0 18px 0 18px;
+            position: relative;
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .center-left p:nth-of-type(1){
+              margin-left: 210px;
+              margin-top: -40px;
+          }
+        .center-left p:nth-of-type(2){
+            margin-left: 100px;
+            margin-top: -40px;
+        }
+        .xinx{
+            font-size: 18px;
+            margin-top: 30px;
+            margin-left: 55px;
+        }
+        .xinx select{
+            width: 475px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 10px;
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        .xinx input{
+            width: 200px;
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: -10px;
+        }
+        .xinx select:nth-of-type(3){
+            margin-top:10px;
+        }
+        .xinx .number{
+            margin-top: 10px;
+            margin-left: 5px;
+            width:90px;
+            height:45px ;
+            font-size: 16px;
+        }
+        .xinx .nul{
+            width:342px;
+            height:45px ;
+            margin-left: 20px;
+        }
+        .xinx .email{
+            width:373px;
+            height: 43px;
+        }
+        .sigma{
+            margin: 50px;
+            text-align: center;
+
+        }
+        .sigma_line:before{
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #b0b0b0;/*颜色需与主题大背景色一致*/
+            position: relative;
+            top: 10px;/*调节线高*/
+            left: 0;
+        }
+        .sigma_text{
+            display: inline-block;
+            background: #fff;
+            padding: 0 18px 0 18px;
+            position: relative;
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .center-left form{
+            margin-top: 20px;
+            margin-left: 120px;
+            font-size: 17px;
+            font-family: Cambria;
+            /*padding-top: 10px;*/
+        }
+
+
+
+
+
+
+        /*右半部分内容*/
+        .center-right{
+            margin-top: -30px;
+            height: 1400px;
+            background: #1f1e1d;
+        }
+        .center-right h1{
+            color: #ffffff;
+            padding-left: 260px;
+            padding-top: 100px;
+        }
+        .center-right p:nth-of-type(1){
+            padding-top: 30px;
+            padding-left: 290px;
+            font-size: 20px;
+            color: #cccccc;
+        }
+        .center-right p:nth-of-type(2){
+            width:471px;
+            margin-left: 120px;
+            padding-top: 20px;
+           line-height: 50px;
+            font-size: 18px;
+            color: #f4f4f4;
+        }
+        .center-right p:nth-of-type(3){
+            font-size: 16px;
+            color: #fff;
+            font-family: Cursive ;
+           margin-left: 130px;
+            padding-bottom: 50px;
+        }
+        .center-right img{
+            margin-top: 30px;
+            margin-left: 120px;
+        }
+        .sigma-content{
+            margin: 50px;
+            text-align: center;
+
+        }
+        .sigma-middle-line:before{
+            content: '';
+            display: block;
+            height: 1px;
+            width: 100%;
+            background-color: #999;/*颜色需与主题大背景色一致*/
+            position: relative;
+            top: 10px;/*调节线高*/
+            left: 0;
+        }
+        .sigma-line-text{
+            display: inline-block;
+            background: #1f1e1d;
+            padding: 0 18px 0 18px;
+            position: relative;
+            color: #999;
+            font-size: 14px;
+            font-weight: 500;
+            color:#a6e1ec;
+        }
+
+        .footer{
+            width: 100%;
+            height: 180px;
+            border: 1px solid;
+            background: #1f1e1d;
+        }
+        .footer img{
+           margin-left: 450px;
+            margin-top: 15px;
+        }
+        .footer p{
+            width: 100%;
+            height: 10px;
+            border-bottom: 1px solid #666666;
+            margin-top: 10px;
+        }
+        .footer span{
+            color: #b0b0b0;
+            margin-left:600px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--标题-->
+            <div class="modal-header">
+                <!--关闭按钮-->
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <!--标题-->
+                <h4 class="modal-title" id="myModalLabel">感谢捐赠：</h4>
+            </div>
+            <div class="modal-body">
+                捐赠成功！<br>
+                您为花的盛开，果的成熟忙碌着，默默地垂着叶的绿荫!您的精神，永记我心!
+            </div>
+            <div class="modal-footer">
+                <!--data-dismiss="modal"  绑定它来实现关闭按钮-->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!--以上为模态框-->
+
+
+<div class="container">
+    <!--最顶端导航条-->
+    <nav class="navbar ">
+        <div class="container-fluid">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">中文</a></li>
+                    <li><a href="#">English</a></li>
+                    <li><a href="#">Francais</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+    <!--最顶端导航条-->
+    <img src="img/1.png" alt="" style="cursor: pointer;margin-top: -15px">
+</div>
+    <p class="bg-success " style="height: 50px;padding-top: 15px;padding-left: 200px;background: #ce171e">
+        <a href="index.html" style="color: #ffffff;"><  返回首页</a>
+    </p>
+
+<div class="row">
+    <!--左半部分内容-->
+    <div class="col-md-6">
+        <div class="center-left">
+        <h2>带来希望的捐助</h2>
+            <div>
+                <ul class="which_group" id="routeType" style="width: 550px;">
+                    <li id="routeType_0" value="0" onclick="checkrouteType(0)">&nbsp;一次性捐款 &nbsp;</li>
+                    <li id="routeType_1" value="1" onclick="checkrouteType(1)">&nbsp;每月捐款 &nbsp;</li>
+                </ul>
+            </div>
+            <br>
+            <br>
+            <br>  <br>
+
+            <div class="ul">
+                <ul class="group" id="route" >
+                    <li id="route_0" value="0" onclick="checkType(0)" style="margin-left: 30px;margin-top: 30px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$100</li>
+                    <li id="route_1" value="1" onclick="checkType(1)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$200</li>
+                    <li id="route_2" value="2" onclick="checkType(2)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$300</li>
+
+                </ul>
+            </div>
+
+            <div class="money">
+                币种 <br>
+                <select>
+                    <option value="人民币">人民币</option>
+                    <option value="港币">港币</option>
+                    <option value="美元">美元</option>
+                    <option value="欧元">欧元</option>
+                </select>
+            </div>
+
+            <div class="sigmacontent">
+                <div class="sigmaline">
+                    <span class="sigmatext">您的个人信息</span>
+                </div>
+            </div><!--底部横线中的文字-->
+            <p>我们绝不会向第三方透露您的个人信息。</p>
+
+            <div class="xinx">
+                您是 <br>
+                <select>
+                    <option value="个人">个人</option>
+                    <option value="公司或组织">公司或组织</option>
+                    <option value="3">社团、学校或协会</option>
+                    <option value="4">基金会或信托机构</option>
+                </select>
+                <br>
+                称谓： <br>
+                <select>
+                    <option value="夫人">夫人</option>
+                    <option value="女士">女士</option>
+                    <option value="先生">先生</option>
+                </select>
+                <br>
+                姓：
+                <input type="text" class="form-control" placeholder="马">
+                名：
+                <input type="text" class="form-control" placeholder="榕鲜">
+                <br>
+                <br>
+                国家地区： <br>
+                <select>
+                    <option value="夫人">中国</option>
+                    <option value="女士">英国</option>
+                    <option value="先生">美国</option>
+                    <option value="先生">法国</option>
+                    <option value="先生">瑞士</option>
+                    <option value="先生">中国香港特别行政区</option>
+                    <option value="先生">中非共和国</option>
+                    <option value="先生">伊拉克</option>
+                    <option value="先生">伊朗</option>
+                    <option value="先生">澳大利亚</option>
+                    <option value="先生">以色列</option>
+                    <option value="先生">不丹</option>
+                </select>
+                <br>
+                电话号码：<br>
+                <input type="text" value="+86" class="form-control number">
+                <input type="text" class="form-control nul" placeholder="5934564608 可不填">
+                <br>
+                电子邮件：
+                <input type="text" class="form-control email" placeholder="mrx@163.com">
+            </div>
+
+            <div class="sigma">
+                <div class="sigma_line">
+                    <span class="sigma_text">支付方式</span>
+                </div>
+            </div>
+            <p class="p1">这些支付方式是安全的。如果您使用信用卡，我们不会储存您的信用卡信息。</p>
+            <form action="" method="get">
+                <label><input name="Fruit" type="radio" value="" /> 信用卡 </label><br>
+                <label><input name="Fruit" type="radio" value="" /> PayPal </label><br>
+                <label><input name="Fruit" type="radio" value="" /> 微信 </label><br>
+                <label><input name="Fruit" type="radio" value="" /> 支付宝 </label>
+            </form>
+            <!--<button class="btn btn-danger btn1">捐赠</button>-->
+
+            <!-- Button trigger modal -->
+            <!--按钮-->
+            <!--模态框-->
+            <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal" style="margin-left: 240px;margin-top: 10px;width: 150px;">
+                捐赠
+            </button>
+
+
+
+        </div>
+    </div>
+    <!--右半部分内容-->
+    <div class="col-md-6">
+        <div class="center-right">
+            <h1>给予希望</h1>
+            <p>今天捐款！</p>
+            <img src="img/2.jpg" alt="">
+            <p >
+                我们生活在一个被战争蹂躏的世界，数百万人的生命被冲突摧毁。<br>
+                在一片混乱和绝望的气氛中，只有红十字国际委员会才能为那些生命被战争侵略的人们带来希望。由于我们的中立性，红十字国际委员会工作人员可以进入冲突地区，在那里他们可以拯救人民并帮助他们重建生活。<br>
+                但是我们的资源不是无限制的，我们需要额外的资金来帮助越来越多的男女老少和处于混战状态的儿童。
+            </p>
+            <div class="sigma-content">
+                <div class="sigma-middle-line">
+                    <span class="sigma-line-text">您的捐款将捐到您最需要的地方。</span>
+                </div>
+            </div><!--底部横线中的文字-->
+            <p>93％的捐款将用于资助运营，以帮助有需要的人。</p>
+
+        </div><!--右半部分内容-->
+    </div><!--栅格布局m6-->
+</div><!--栅格布局-->
+
+    <div class="footer">
+        <img src="img/4.png" alt="">
+        <p></p>
+        <span>@版权归软件五班三组马榕鲜所有</span>
+    </div>
+
+
+
+</body>
+<script>
+    var distanceType = "0"; //默认value值
+    $("#routeType_0").css("background-color", "#05A5F9");
+    $("#routeType_0").css("color", "#FFFFFF");
+
+    function checkrouteType(id) {
+        distanceType = $("#routeType_" + id)[0].attributes.value.nodeValue;
+        $("#routeType li").css("background-color", "rgba(255,255,255,0)");
+        $("#routeType li").css("color", "#595959");
+        $("#routeType_" + id).css("background-color", "#05A5F9");
+        $("#routeType_" + id).css("color", "#FFFFFF");
+    }
+    // $('#myModal').modal();
+    var disType = "0"; //默认value值
+    $("#route_0").css("background-color", "#a6e1ec");
+    $("#route_0").css("color", "#FFFFFF");
+
+    function checkType(id) {
+        disType = $("#route_" + id)[0].attributes.value.nodeValue;
+        $("#route li").css("background-color", "rgba(255,255,255,0)");
+        $("#route li").css("color", "#595959");
+        $("#route_" + id).css("background-color", "#a6e1ec");
+        $("#route_" + id).css("color", "#FFFFFF");
+    }
+
+</script>
+</html>

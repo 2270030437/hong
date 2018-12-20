@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>列表页</title>
+    <style type="text/css">
+        .table{
+            width: 1000px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="dist/js/jquery-1.12.4.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>捐款人员列表：</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <td>编号</td>
+            <td>姓名</td>
+            <td>电话</td>
+            <td>金额</td>
+            <td>操作</td>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</div>
+<script>
+    $.ajax({
+        type: 'POST',
+        url: 'lb.php',
+        data: {},
+        success: function (data) {
+            //console.log(data);
+            var a = data.split(' ');
+            //console.log(a);
+            var trStr = '';
+            //动态拼接table
+            for (var i = 0; i < a.length-1 ; i++) {
+                trStr += '<tr class="example">';
+                trStr += '<td>' + JSON.parse(a[i]).wid + '</td>';
+                trStr += '<td>' + JSON.parse(a[i]).wname + '</td>';
+                trStr += '<td>' + JSON.parse(a[i]).tem + '</td>';
+                trStr += '<td>' + JSON.parse(a[i]).money + '</td>';
+                trStr += '<td>' + '<button class="btn btn-primary">删除</button>'+ '</td>';
+                trStr += '</tr>';
+            }
+            $("#tbody").html(trStr);
+        }
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="dist/css/bootstrap.css">
+    <script src="dist/js/jquery-1.12.4.js"></script>
+    <script src="dist/js/bootstrap.js"></script>
+    <style>
+        .container-fluid{
+            background: url("img/67I58PICK6c_1024.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        /*登录表*/
+        #reg{
+            width: 370px;
+            background: rgba(0, 0,0, 0.2);
+            border-radius: 10px;
+            margin: 132px 780px;
+            box-sizing: border-box;
+            padding: 30px;
+        }
+        .form-control{
+            height: 45px;
+        }
+        h2{
+            margin-bottom: 20px;
+            color: #fff;
+
+        }
+        .checkbox{
+            margin-left: 20px;
+            color: #000;
+        }
+        .btn{
+           width: 310px;
+            height: 40px;
+        }
+        span{
+            height: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+<img src="">
+<div class="container" id="reg">
+    <form id="myF">
+        <h2>红十字管理员登录</h2>
+        <div class="form-group">
+            <input type="text" class="form-control text" id="user" placeholder="账号">
+            <span></span>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control text" id="pwd" placeholder="密码">
+            <span></span>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox">记住密码
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info" id="Login"><a href="列表页.html">登录</a></button>
+        </div>
+        <a href="">返回首页</a>
+    </form>
+</div>
+<script>
+    $(function () {
+        var str="";
+            $("#user").blur(function () {
+                var str2=/^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z0-9]{2,6}$/g;
+                if($("#user").val()==""){
+                    str = "用户名不能为空";
+                    $(this).next().text(str);
+                    $(this).data({"s":1});
+                }else if(str2.test($(this).val())){
+                    str = "√";
+                    $(this).next().show().text(str);
+                    $(this).data({"s":0});
+                }else{
+                    str = "用户名长度是邮箱格式";
+                    $(this).next().text(str);
+                    $(this).data({"s":1});
+                }
+            });
+            $("#pwd").blur(function () {
+                var str1=/^(?![0-9]+$)(?![a-z]+$)[0-9a-z]{8,16}$/g;
+                if($("#pwd").val()==""){
+                    str = "密码不能为空";
+                    $(this).next().text(str);
+                    $(this).data({"s":1});
+                }else if(str1.test($(this).val())){
+                    str = "√";
+                    $(this).next().show().text(str);
+                    $(this).data({"s":0});
+                }else{
+                    str = "密码长度不能小于8并且不是纯数字";
+                    $(this).next().text(str);
+                    $(this).data({"s":1});
+
+                }
+            });
+        $("#reg-but").click(function () {
+            $(".text").blur();
+            var t = 0 ;
+            $(".text").each(function () {
+                t+= $(this).data().s;
+            });
+            if(t==0){
+                //alert($("#user").val()+"---"+t);
+                get($("#user").val(),$("#pwd").val());
+            }else {
+                return false;
+            }
+        });
+
+        function get(uv,pv) {
+            $.ajax({
+                type:"post",
+                url:"lb.php",
+                data:{
+                    user:uv,
+                    pwd:pv,
+                },
+                success:function (data) {
+                    alert(data);
+                    if(data == 0){
+                        alert("登录失败,请重新输入");
+                    }else{
+                        alert("登录成功");
+                        window.open("index2.html");
+                    }
+                }
+            })
+        }
+
+    })
+
+
+</script>
+</body>
+</html>
