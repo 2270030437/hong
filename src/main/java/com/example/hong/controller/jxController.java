@@ -22,6 +22,10 @@ public class jxController {
     public String index() {
         return "index";
     }
+    @RequestMapping("/text")
+    public String text() {
+        return "text";
+    }
 
     @RequestMapping("/DZ")
     public String DZ() {
