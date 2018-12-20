@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -27,16 +27,16 @@
 
 
     </style>
-    <link rel="stylesheet" href="dist/css/bootstrap.css">
-    <script src="dist/js/jquery-1.12.4.js"></script>
-    <script src="dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" th:href="@{/static/dist/css/bootstrap.css}">
+    <script th:src="@{/static/dist/js/jquery-1.12.4.js}"></script>
+    <script th:src="@{/static/dist/js/bootstrap.js}"></script>
 
 
 </head>
 <body>
 <div class="container">
     <div class="div1">
-    <img src="img/1545045226.jpg" height="150" width="300"/>
+    <img src="/static/img/1545045226.jpg" height="150" width="300"/>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#">中文   |</a></li>
             <li><a href="#">English    |</a></li>
@@ -77,7 +77,7 @@
     <div class="panel">
         <div class="panel-heading">
             <h3 class="panel-title">
-                <span><a href="index.html" style="color: #fff;">首页</a>&nbsp;></span>&nbsp;工作内容
+                <span><a th:href="@{/index}" style="color: #fff;">首页</a>&nbsp;></span>&nbsp;工作内容
             </h3>
         </div>
         <div class="panel-body">
@@ -91,36 +91,36 @@
         </div>
     </div>
     <div>
-        <img src="img/1545049741.jpg" height="175" width="1350"/>
+        <img src="/static/img/1545049741.jpg" height="175" width="1350"/>
     </div>
     <div class="row">
         <div class="sg">
         <div class="col-md-6">
-         <img src="img/disability-square.jpg" height="170" width="170" class="img-circle image-responsive"/><p>帮助残疾人士</p><br>
-            <img src="img/3.jpg" height="170" width="170"class="img-circle image-responsive"/><p>保护平民</p><br>
-            <img src="img/4.jpg" height="170" width="170" class="img-circle image-responsive"/><p>促进遵守法律</p><br>
-            <img src="img/8.jpg" height="170" width="170" class="img-circle image-responsive"/><p>法医学与人道行动</p><br>
-            <img src="img/9.jpg" height="170" width="170" class="img-circle image-responsive"/><p>反地雷行动</p><br>
-            <img src="img/11.jpg" height="170" width="170" class="img-circle image-responsive"/><p>供水与住所</p><br>
-            <img src="img/12.jpg" height="170" width="170" class="img-circle image-responsive"/><p>经济安全</p><br>
+         <img src="/static/img/disability-square.jpg" height="170" width="170" class="img-circle image-responsive"/><p>帮助残疾人士</p><br>
+            <img src="/static/img/3.jpg" height="170" width="170"class="img-circle image-responsive"/><p>保护平民</p><br>
+            <img src="/static/img/4.jpg" height="170" width="170" class="img-circle image-responsive"/><p>促进遵守法律</p><br>
+            <img src="/static/img/8.jpg" height="170" width="170" class="img-circle image-responsive"/><p>法医学与人道行动</p><br>
+            <img src="/static/img/9.jpg" height="170" width="170" class="img-circle image-responsive"/><p>反地雷行动</p><br>
+            <img src="/static/img/11.jpg" height="170" width="170" class="img-circle image-responsive"/><p>供水与住所</p><br>
+            <img src="/static/img/12.jpg" height="170" width="170" class="img-circle image-responsive"/><p>经济安全</p><br>
 
         </div>
 
 
         <div class="col-md-6">
-            <img src="img/5.jpg" height="170" width="170" class="img-circle image-responsive"/><p>医疗卫生</p><br>
-            <img src="img/6.jpg" height="170" width="170" class="img-circle image-responsive"/><p>应对性暴力</p><br>
-            <img src="img/civilians-v-p-sy-e-00297h.jpg" height="170" width="170" class="img-circle image-responsive"/><p>与各国红会合作</p><br>
-            <img src="img/weapons-mines_0.jpg" height="170" width="170" class="img-circle image-responsive"/><p>人与商业社会合作</p><br>
-            <img src="img/8.jpg" height="170" width="170" class="img-circle image-responsive"/><p>援救被拘留者</p><br>
-            <img src="img/9.jpg" height="170" width="170" class="img-circle image-responsive"/><p>重建家庭联系</p><br>
-            <img src="img/13.jpg" height="170" width="170" class="img-circle image-responsive"/><p>人道外交</p><br>
+            <img src="/static/img/5.jpg" height="170" width="170" class="img-circle image-responsive"/><p>医疗卫生</p><br>
+            <img src="/static/img/6.jpg" height="170" width="170" class="img-circle image-responsive"/><p>应对性暴力</p><br>
+            <img src="/static/img/civilians-v-p-sy-e-00297h.jpg" height="170" width="170" class="img-circle image-responsive"/><p>与各国红会合作</p><br>
+            <img src="/static/img/weapons-mines_0.jpg" height="170" width="170" class="img-circle image-responsive"/><p>人与商业社会合作</p><br>
+            <img src="/static/img/8.jpg" height="170" width="170" class="img-circle image-responsive"/><p>援救被拘留者</p><br>
+            <img src="/static/img/9.jpg" height="170" width="170" class="img-circle image-responsive"/><p>重建家庭联系</p><br>
+            <img src="/static/img/13.jpg" height="170" width="170" class="img-circle image-responsive"/><p>人道外交</p><br>
             </div>
         </div>
     </div>
 
 <div class="im">
-    <img src="img/666.jpg" height="80" width="1340"/>
+    <img src="/static/img/666.jpg" height="80" width="1340"/>
     <a href="#">>移民、难民和寻求避难者
 </a>
 </div>
