@@ -73,17 +73,4 @@ public class jxController {
         return "forward:/getjxList";
     }
 
-
-
-
-
-
-
-
-    @RequestMapping(value = "/getjx",method = RequestMethod.GET)
-    @ResponseBody
-    public Object getjx(){
-        List<juan> list = jxService.getjxList();
-        return list;
-    }
 }
